@@ -88,10 +88,47 @@
 
      <?php 
 
-    $
+    $name = $_GET['name'];
+    $mail = $_GET['mail'];
+    $age = $_GET['age'];
+
+    
+    if(empty($name) || empty($mail) || empty($age)){
+        echo 'Dati mancanti impossibile eseguire il log-in ' ;
+    }elseif ((strlen($name) > 3) &&  (strpos($mail,'.') ) && (strpos($mail,'@') )  && (is_numeric($age))){
+        echo 'Accesso eseguito';
+    }else{
+        echo 'Accesso negato , uno o più parametri non sono idonei';
+    }
 
 
      ?>
+
+     <!-- Fine snack 2 -->
+
+
+     <!-- Snack 3
+     Creare un array con 15 numeri casuali, tenendo conto che l’array non dovrà contenere lo stesso numero più di una volta
+      -->
+      <h1>Snack 3</h1>
+
+      <?php 
+      
+      $numeri = [];
+
+      while(count($numeri) < 15 ){
+
+        $num = rand(1,50);
+
+        if(!in_array($num,$numeri)){
+            $numeri[] = $num;
+        }
+         
+      }
+
+      var_dump($numeri);
+
+      ?>
 
 
 
